@@ -10,6 +10,7 @@
     <Folder Include="DTOs\" />
     <Folder Include="Behaviors\" />
     <Folder Include="Exceptions\" />
+    <Folder Include="Validators\" />
   </ItemGroup>
 
 </Project>

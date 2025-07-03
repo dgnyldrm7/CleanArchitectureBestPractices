@@ -9,6 +9,11 @@
   <ItemGroup>
     <Folder Include="Logging\" />
     <Folder Include="FileStorage\" />
+    <Folder Include="Auth\" />
+    <Folder Include="BackgroundJobs\" />
+    <Folder Include="Caching\" />
+    <Folder Include="Redis\" />
+    <Folder Include="SignalR\" />
   </ItemGroup>
 
 </Project>
