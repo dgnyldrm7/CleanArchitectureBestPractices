@@ -14,4 +14,8 @@
     <Folder Include="Configurations\RateLimitingConfiguration.cs\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CleanArchitecture.Presentation\CleanArchitecture.Presentation.csproj" />
+  </ItemGroup>
+
 </Project>
