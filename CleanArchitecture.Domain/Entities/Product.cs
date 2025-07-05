@@ -1,8 +1,9 @@
-﻿namespace CleanArchitecture.Domain.Entities
+﻿using CleanArchitecture.Domain.Base;
+
+namespace CleanArchitecture.Domain.Entities
 {
-    public class Product
+    public class Product : AuditableEntity
     {
-        public int Id { get; set; }
         public string Name { get; set; } = default!;
     }
 }

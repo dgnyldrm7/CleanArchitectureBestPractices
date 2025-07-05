@@ -1,7 +1,11 @@
 ﻿namespace CleanArchitecture.Application.Interfaces
 {
-    public interface IUnitOfWork
+    public interface IUnitOfWork : IDisposable
     {
-        Task<int> TestMethod();
+        //Diğer repositoriyler için burada yazılması lazım!
+
+
+        Task<int> SaveChangesAsync();
+        void Rollback(); // Hata durumunda işlemleri geri al
     }
 }

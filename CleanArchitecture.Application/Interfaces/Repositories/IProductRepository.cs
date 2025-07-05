@@ -1,6 +1,6 @@
 ﻿namespace CleanArchitecture.Application.Interfaces.Repositories
 {
-    internal interface IProductRepository
+    public interface IProductRepository
     {
     }
 }

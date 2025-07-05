@@ -2,6 +2,8 @@
 namespace CleanArchitecture.API;
 using CleanArchitecture.Infrastructure;
 using CleanArchitecture.Persistance;
+using CleanArchitecture.Application;
+using CleanArchitecture.Domain;
 
 public class Program
 {
@@ -18,7 +20,9 @@ public class Program
 
         // Register the all services
         builder.Services.AddInfrastructureServices(builder.Configuration);
-        builder.Services.AddPersistanceService();
+        builder.Services.AddPersistanceServices();
+        builder.Services.AddApplicationServices();
+        builder.Services.AddDomainServices();
 
 
         var app = builder.Build();
@@ -32,7 +36,6 @@ public class Program
         app.UseHttpsRedirection();
 
         app.UseAuthorization();
-
 
         app.MapControllers();
 
