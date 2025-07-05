@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AutoMapper;
 
 namespace CleanArchitecture.Application.Mapping
 {
-    class MappingProfile
+    class MappingProfile : Profile
     {
+        public MappingProfile()
+        {
+            // CreateMap<Source, Destination>();
+            // Example:
+            // CreateMap<Product, ProductDto>();
+            // CreateMap<ProductDto, Product>();
+            // Add more mappings as needed
+        }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace CleanArchitecture.Application
+﻿using Microsoft.Extensions.DependencyInjection;
+
+namespace CleanArchitecture.Application
 {
     public static class DependencyInjection
     {

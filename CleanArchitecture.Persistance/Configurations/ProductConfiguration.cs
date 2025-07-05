@@ -1,6 +1,17 @@
-﻿namespace CleanArchitecture.Persistance.Configurations
+﻿using CleanArchitecture.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+
+namespace CleanArchitecture.Persistance.Configurations
 {
-    internal class ProductConfiguration
+    public class ProductConfiguration : IEntityTypeConfiguration<Product>
     {
+        public void Configure(EntityTypeBuilder<Product> builder)
+        {
+            // Configure the Product entity properties and relationships here.
+            builder.ToTable("Products");
+
+            builder.HasKey(p => p.Id);
+        }
     }
 }

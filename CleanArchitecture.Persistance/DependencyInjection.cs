@@ -1,4 +1,6 @@
-﻿namespace CleanArchitecture.Persistance
+﻿using Microsoft.Extensions.DependencyInjection;
+
+namespace CleanArchitecture.Persistance
 {
     public static class DependencyInjection
     {
