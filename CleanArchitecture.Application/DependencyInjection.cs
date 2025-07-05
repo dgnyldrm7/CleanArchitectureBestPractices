@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
 
 namespace CleanArchitecture.Application
 {
@@ -12,6 +13,10 @@ namespace CleanArchitecture.Application
             //Pipeline Behaviors
             //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(MyPipelineBehavior<,>));
 
+            var assembly = Assembly.GetExecutingAssembly();
+            
+            // Register MediatR
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(assembly));
 
             return services;
         }
