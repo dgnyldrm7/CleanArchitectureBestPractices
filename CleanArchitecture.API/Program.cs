@@ -5,6 +5,10 @@ using CleanArchitecture.Persistance;
 using CleanArchitecture.Application;
 using CleanArchitecture.Domain;
 using CleanArchitecture.Shared;
+using CleanArchitecture.Infrastructure.SignalR;
+using CleanArchitecture.Presentation.Hubs;
+using CleanArchitecture.Application.Interfaces;
+using Microsoft.AspNetCore.SignalR;
 
 public class Program
 {
@@ -39,6 +43,13 @@ public class Program
         // If you singlethon or transient services, you can register them here
         // Example:
         // builder.Services.AddSingleton<ISingletonService, SingletonService>();
+        builder.Services.AddScoped<ISignalRTypeSafe>(provider =>
+        {
+            var hubContext = provider.GetRequiredService<IHubContext<ChatHub>>();
+            return new SignalRService<ChatHub>(hubContext);
+        });
+
+        builder.Services.AddSignalR();
 
         var app = builder.Build();
 
@@ -47,6 +58,8 @@ public class Program
             app.UseSwagger();
             app.UseSwaggerUI();
         }
+
+        app.MapHub<ChatHub>("/chathub");
 
         app.UseHttpsRedirection();
 

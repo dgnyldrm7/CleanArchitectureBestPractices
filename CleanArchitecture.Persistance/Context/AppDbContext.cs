@@ -18,7 +18,6 @@ public sealed class AppDbContext : DbContext
 
     override protected void OnModelCreating(ModelBuilder modelBuilder)
     {
-        base.OnModelCreating(modelBuilder);
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
     }
 
@@ -43,4 +42,3 @@ public sealed class AppDbContext : DbContext
         return base.SaveChangesAsync(cancellationToken);
     }
 }
-

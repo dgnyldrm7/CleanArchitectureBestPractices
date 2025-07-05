@@ -10,7 +10,7 @@ namespace CleanArchitecture.Shared
             var types = assembly.GetTypes();
 
             var implementations = types
-                .Where(t => t.IsClass && !t.IsAbstract)
+                .Where(t => t.IsClass && !t.IsAbstract && !t.IsGenericType)
                 .ToList();
 
             foreach (var impl in implementations)

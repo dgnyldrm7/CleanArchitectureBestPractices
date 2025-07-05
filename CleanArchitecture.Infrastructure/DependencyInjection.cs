@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using CleanArchitecture.Infrastructure.Settings;
+using CleanArchitecture.Infrastructure.SignalR;
 
 namespace CleanArchitecture.Infrastructure
 {
