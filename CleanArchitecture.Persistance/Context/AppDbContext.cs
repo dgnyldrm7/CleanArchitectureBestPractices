@@ -21,14 +21,11 @@ public sealed class AppDbContext : DbContext
     override protected void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-
-        // Configure entity properties, relationships, etc.
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
     }
 
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
-        //return base.SaveChangesAsync(cancellationToken);
         var entities = ChangeTracker.Entries<AuditableEntity>();
 
         foreach (var entity in entities)
