@@ -10,11 +10,11 @@
     <Folder Include="DTOs\" />
     <Folder Include="Behaviors\" />
     <Folder Include="Exceptions\" />
-    <Folder Include="Validators\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="15.0.0" />
+    <PackageReference Include="FluentValidation" Version="12.0.0" />
   </ItemGroup>
 
   <ItemGroup>

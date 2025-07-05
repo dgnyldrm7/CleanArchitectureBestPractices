@@ -1,6 +1,6 @@
 ﻿namespace CleanArchitecture.Domain.Enums
 {
-    internal enum Payment
+    public enum Payment
     {
         card,
         cash

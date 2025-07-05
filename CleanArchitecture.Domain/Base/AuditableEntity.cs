@@ -2,7 +2,7 @@
 {
     public abstract class AuditableEntity : BaseEntity
     {
-        public AuditableEntity()
+        protected AuditableEntity()
         {
             CreatedAt = DateTime.UtcNow;
         }

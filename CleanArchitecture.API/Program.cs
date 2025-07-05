@@ -19,8 +19,8 @@ public class Program
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
+        // Register the HttpContextAccessor to access the current HTTP context
         builder.Services.AddHttpContextAccessor();
-
 
         // Register the all services
         builder.Services.AddInfrastructureServices(builder.Configuration);
