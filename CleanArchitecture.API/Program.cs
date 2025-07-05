@@ -4,6 +4,7 @@ using CleanArchitecture.Infrastructure;
 using CleanArchitecture.Persistance;
 using CleanArchitecture.Application;
 using CleanArchitecture.Domain;
+using CleanArchitecture.Shared;
 
 public class Program
 {
@@ -18,12 +19,26 @@ public class Program
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
+        builder.Services.AddHttpContextAccessor();
+
+
         // Register the all services
         builder.Services.AddInfrastructureServices(builder.Configuration);
         builder.Services.AddPersistanceServices();
         builder.Services.AddApplicationServices();
         builder.Services.AddDomainServices();
 
+
+        // Register all scoped services from the assemblies. (Default lifetime is Scoped!)
+        builder.Services.AddAllScopedServices(typeof(CleanArchitecture.Infrastructure.AssemblyReference).Assembly);
+        builder.Services.AddAllScopedServices(typeof(CleanArchitecture.Persistance.AssemblyReference).Assembly);
+        builder.Services.AddAllScopedServices(typeof(CleanArchitecture.Application.AssemblyReference).Assembly);
+        builder.Services.AddAllScopedServices(typeof(CleanArchitecture.Domain.AssemblyReference).Assembly);
+        builder.Services.AddAllScopedServices(typeof(CleanArchitecture.Presentation.AssemblyReference).Assembly);
+
+        // If you singlethon or transient services, you can register them here
+        // Example:
+        // builder.Services.AddSingleton<ISingletonService, SingletonService>();
 
         var app = builder.Build();
 

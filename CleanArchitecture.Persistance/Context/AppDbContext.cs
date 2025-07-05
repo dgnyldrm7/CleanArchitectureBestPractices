@@ -7,9 +7,7 @@ namespace CleanArchitecture.Persistance.Context;
 
 public sealed class AppDbContext : DbContext
 {
-    // Constructor that accepts DbContextOptions to configure the context.
     private readonly ICurrentUserService _currentUserService;
-
     public AppDbContext(DbContextOptions options, ICurrentUserService currentUserService) : base(options)
     {
         _currentUserService = currentUserService;

@@ -12,6 +12,7 @@ namespace CleanArchitecture.Application
             //Pipeline Behaviors
             //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(MyPipelineBehavior<,>));
 
+
             return services;
         }
     }

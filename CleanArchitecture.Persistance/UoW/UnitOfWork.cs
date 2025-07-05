@@ -1,6 +1,22 @@
-﻿namespace CleanArchitecture.Persistance.UoW
+﻿using CleanArchitecture.Application.Interfaces;
+
+namespace CleanArchitecture.Persistance.UoW
 {
-    class UnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Rollback()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<int> SaveChangesAsync()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
