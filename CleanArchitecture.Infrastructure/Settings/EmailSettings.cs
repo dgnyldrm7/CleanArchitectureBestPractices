@@ -2,7 +2,8 @@
 {
     public class EmailSettings
     {
-        public string SmtpServer { get; set; } = default!;
+        public string SmtpHost { get; set; } = default!;
         public int Port { get; set; }
+        public string SenderEmail { get; set; } = default!;
     }
 }

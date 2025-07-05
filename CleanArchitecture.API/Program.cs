@@ -1,5 +1,7 @@
 
 namespace CleanArchitecture.API;
+using CleanArchitecture.Infrastructure;
+using CleanArchitecture.Persistance;
 
 public class Program
 {
@@ -13,6 +15,11 @@ public class Program
 
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
+
+        // Register the all services
+        builder.Services.AddInfrastructureServices(builder.Configuration);
+        builder.Services.AddPersistanceService();
+
 
         var app = builder.Build();
 

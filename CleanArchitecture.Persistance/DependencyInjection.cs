@@ -4,7 +4,7 @@ namespace CleanArchitecture.Persistance
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddPersistance(this IServiceCollection services)
+        public static IServiceCollection AddPersistanceService(this IServiceCollection services)
         {
             // Register your persistence-related services here
             // For example, DbContext, repositories, etc.
