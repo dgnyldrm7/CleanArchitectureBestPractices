@@ -29,7 +29,7 @@ namespace CleanArchitecture.Presentation.Controller
             // This is a placeholder for a MediatR request.
             // You would typically send a request to MediatR here.
             var response = await _mediator.Send(new GetAllProductsQueryRequest());
-            return Ok("Mediator Test Successful");
+            return Ok(response);
         }
 
     }
