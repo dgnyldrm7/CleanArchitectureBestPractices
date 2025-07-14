@@ -1,6 +1,7 @@
 ﻿namespace CleanArchitecture.Infrastructure.Services
 {
-    internal class EmailSender
+    public class EmailSender
     {
+
     }
 }
