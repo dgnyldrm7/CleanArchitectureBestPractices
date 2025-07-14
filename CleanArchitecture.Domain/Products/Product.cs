@@ -1,6 +1,6 @@
 ﻿using CleanArchitecture.Domain.Base;
 
-namespace CleanArchitecture.Domain.Entities
+namespace CleanArchitecture.Domain.Products
 {
     public class Product : AuditableEntity
     {

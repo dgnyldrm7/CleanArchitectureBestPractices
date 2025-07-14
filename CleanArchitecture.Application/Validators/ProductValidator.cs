@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.Domain.Entities;
+﻿using CleanArchitecture.Domain.Products;
 using FluentValidation;
 
 namespace CleanArchitecture.Application.Validators

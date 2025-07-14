@@ -1,6 +1,6 @@
 ﻿using CleanArchitecture.Application.Interfaces.Common;
 using CleanArchitecture.Domain.Base;
-using CleanArchitecture.Domain.Entities;
+using CleanArchitecture.Domain.Products;
 using Microsoft.EntityFrameworkCore;
 
 namespace CleanArchitecture.Persistance.Context;
