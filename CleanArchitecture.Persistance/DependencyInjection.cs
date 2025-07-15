@@ -11,7 +11,7 @@ namespace CleanArchitecture.Persistance
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddPersistanceServices(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddPersistenceServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(
@@ -21,10 +21,8 @@ namespace CleanArchitecture.Persistance
                 )
             );
 
-            // Identity servisleri
             services.AddIdentity<ApplicationUser, IdentityRole>(options =>
             {
-                // Identity ayarları örnek:
                 options.Password.RequireDigit = true;
                 options.Password.RequiredLength = 8;
                 options.Password.RequireNonAlphanumeric = false;

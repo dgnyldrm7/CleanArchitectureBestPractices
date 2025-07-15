@@ -1,18 +1,13 @@
-
 namespace CleanArchitecture.API;
-using CleanArchitecture.Infrastructure;
-using CleanArchitecture.Persistance;
 using CleanArchitecture.Application;
-using CleanArchitecture.Domain;
-using CleanArchitecture.Shared;
-using CleanArchitecture.Infrastructure.SignalR;
-using CleanArchitecture.Presentation.Hubs;
 using CleanArchitecture.Application.Interfaces;
+using CleanArchitecture.Domain;
+using CleanArchitecture.Infrastructure;
+using CleanArchitecture.Infrastructure.SignalR;
+using CleanArchitecture.Persistance;
+using CleanArchitecture.Presentation.Hubs;
+using CleanArchitecture.Shared;
 using Microsoft.AspNetCore.SignalR;
-using CleanArchitecture.Persistance.Context;
-using Microsoft.EntityFrameworkCore;
-using CleanArchitecture.Domain.Entities.Users;
-using Microsoft.AspNetCore.Identity;
 
 public class Program
 {
@@ -32,7 +27,7 @@ public class Program
 
         // Register the all services
         builder.Services.AddInfrastructureServices(builder.Configuration);
-        builder.Services.AddPersistanceServices(builder.Configuration);
+        builder.Services.AddPersistenceServices(builder.Configuration);
         builder.Services.AddApplicationServices();
         builder.Services.AddDomainServices();
 
