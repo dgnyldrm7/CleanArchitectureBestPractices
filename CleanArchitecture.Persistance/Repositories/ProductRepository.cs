@@ -9,7 +9,6 @@ namespace CleanArchitecture.Persistance.Repositories
     {
         public ProductRepository(AppDbContext context) : base(context) { }
 
-
         public async Task<IEnumerable<Product>> GetTopSellingProductsAsync()
         {
             return await _dbSet.ToListAsync();

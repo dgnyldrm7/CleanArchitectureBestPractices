@@ -13,6 +13,7 @@ namespace CleanArchitecture.Persistance
     {
         public static IServiceCollection AddPersistenceServices(this IServiceCollection services, IConfiguration configuration)
         {
+            // Register the DbContext with SQL Server and specify the migrations assembly
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(
                     configuration.GetConnectionString("SqlServer"),
@@ -21,6 +22,7 @@ namespace CleanArchitecture.Persistance
                 )
             );
 
+            // Register the IdentityDbContext with SQL Server and specify the migrations assembly
             services.AddIdentity<ApplicationUser, IdentityRole>(options =>
             {
                 options.Password.RequireDigit = true;

@@ -18,7 +18,6 @@ public class Program
         builder.Services.AddControllers()
             .AddApplicationPart(typeof(CleanArchitecture.Presentation.AssemblyReference).Assembly);
 
-
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
@@ -30,7 +29,6 @@ public class Program
         builder.Services.AddPersistenceServices(builder.Configuration);
         builder.Services.AddApplicationServices();
         builder.Services.AddDomainServices();
-
 
         // Register all scoped services from the assemblies. (Default lifetime is Scoped!)
         builder.Services.AddAllScopedServices(typeof(CleanArchitecture.Infrastructure.AssemblyReference).Assembly);
