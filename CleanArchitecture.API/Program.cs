@@ -11,6 +11,8 @@ using CleanArchitecture.Application.Interfaces;
 using Microsoft.AspNetCore.SignalR;
 using CleanArchitecture.Persistance.Context;
 using Microsoft.EntityFrameworkCore;
+using CleanArchitecture.Domain.Entities.Users;
+using Microsoft.AspNetCore.Identity;
 
 public class Program
 {
@@ -28,20 +30,9 @@ public class Program
         // Register the HttpContextAccessor to access the current HTTP context
         builder.Services.AddHttpContextAccessor();
 
-        // Register the DbContext with SQL Server (or any other database provider)
-        builder.Services.AddDbContext<AppDbContext>(options =>
-        {
-            options.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer"), 
-                    opt => opt.MigrationsAssembly(typeof(CleanArchitecture.Persistance.AssemblyReference).Assembly.FullName)
-                );
-
-            // You can also use other database providers like PostgreSQL, MySQL, etc.
-            // options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
-        });
-
         // Register the all services
         builder.Services.AddInfrastructureServices(builder.Configuration);
-        builder.Services.AddPersistanceServices();
+        builder.Services.AddPersistanceServices(builder.Configuration);
         builder.Services.AddApplicationServices();
         builder.Services.AddDomainServices();
 
@@ -75,6 +66,8 @@ public class Program
         app.MapHub<ChatHub>("/chathub");
 
         app.UseHttpsRedirection();
+
+        app.UseAuthentication();
 
         app.UseAuthorization();
 

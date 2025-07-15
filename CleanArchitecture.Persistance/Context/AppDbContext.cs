@@ -1,11 +1,13 @@
 ﻿using CleanArchitecture.Application.Interfaces.Common;
 using CleanArchitecture.Domain.Base;
 using CleanArchitecture.Domain.Entities.Products;
+using CleanArchitecture.Domain.Entities.Users;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace CleanArchitecture.Persistance.Context;
 
-public sealed class AppDbContext : DbContext
+public sealed class AppDbContext : IdentityDbContext<User>
 {
     private readonly ICurrentUserService _currentUserService;
     public AppDbContext(DbContextOptions options, ICurrentUserService currentUserService) : base(options)

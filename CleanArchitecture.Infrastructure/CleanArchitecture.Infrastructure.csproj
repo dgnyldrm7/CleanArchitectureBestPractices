@@ -10,7 +10,6 @@
     <Folder Include="Logging\" />
     <Folder Include="FileStorage\" />
     <Folder Include="BackgroundJobs\" />
-    <Folder Include="Identity\" />
     <Folder Include="Redis\" />
   </ItemGroup>
 

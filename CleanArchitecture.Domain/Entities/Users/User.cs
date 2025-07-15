@@ -1,9 +1,7 @@
-﻿using Microsoft.AspNetCore.Identity;
-
-namespace CleanArchitecture.Domain.Entities.Users
+﻿namespace CleanArchitecture.Domain.Entities.Users
 {
-    public class User : IdentityUser
+    public class User : IUser
     {
-        //added here feature if you need
+        public string FullName { get; set; } = default!;
     }
 }
