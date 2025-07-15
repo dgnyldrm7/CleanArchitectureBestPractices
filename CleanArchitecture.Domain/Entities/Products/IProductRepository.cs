@@ -1,7 +1,6 @@
 ﻿using CleanArchitecture.Application.Common;
-using CleanArchitecture.Domain.Products;
 
-namespace CleanArchitecture.Domain.Products;
+namespace CleanArchitecture.Domain.Entities.Products;
 
 public interface IProductRepository : IGeneric<Product>
 {

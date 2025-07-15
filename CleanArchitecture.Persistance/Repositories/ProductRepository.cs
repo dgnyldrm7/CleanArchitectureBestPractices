@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.Domain.Products;
+﻿using CleanArchitecture.Domain.Entities.Products;
 using CleanArchitecture.Persistance.Context;
 using CleanArchitecture.Persistance.Repositories.GenericRepository;
 using Microsoft.EntityFrameworkCore;
