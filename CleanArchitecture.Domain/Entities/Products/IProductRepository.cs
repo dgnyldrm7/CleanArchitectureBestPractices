@@ -1,6 +1,4 @@
-﻿using CleanArchitecture.Application.Common;
-
-namespace CleanArchitecture.Domain.Entities.Products;
+﻿namespace CleanArchitecture.Domain.Entities.Products;
 public interface IProductRepository : IGeneric<Product>
 {
     // Define any additional methods specific to Product repository if needed

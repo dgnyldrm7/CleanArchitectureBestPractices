@@ -1,4 +1,4 @@
-﻿namespace CleanArchitecture.Application.Interfaces.Common
+﻿namespace CleanArchitecture.Domain.Interfaces.Common
 {
     public interface ICachService
     {

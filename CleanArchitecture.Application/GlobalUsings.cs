@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CleanArchitecture.Application
-{
-    internal class GlobalUsings
-    {
-    }
-}
+﻿global using System;
+global using System.Collections.Generic;
+global using System.Linq;
+global using System.Text;
+global using System.Threading.Tasks;
+global using CleanArchitecture.Domain.Entities.Products;
+global using FluentValidation;
+global using CleanArchitecture.Application.JwtOptions;
+global using CleanArchitecture.Application.Exceptions;

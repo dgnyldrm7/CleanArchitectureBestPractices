@@ -1,6 +1,4 @@
-﻿using CleanArchitecture.Application.JwtOptions;
-
-namespace CleanArchitecture.Application.Interfaces.Common;
+﻿namespace CleanArchitecture.Application.Interfaces.Common;
 
 public interface ITokenService
 {

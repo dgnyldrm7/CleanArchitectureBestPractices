@@ -1,7 +1,4 @@
-﻿using CleanArchitecture.Domain.Entities.Products;
-using FluentValidation;
-
-namespace CleanArchitecture.Application.Validators
+﻿namespace CleanArchitecture.Application.Validators
 {
     public class ProductValidator : AbstractValidator<Product>
     {

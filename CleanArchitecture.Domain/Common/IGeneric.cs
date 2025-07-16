@@ -1,4 +1,4 @@
-﻿namespace CleanArchitecture.Application.Common
+﻿namespace CleanArchitecture.Domain.Common
 {
     public interface IGeneric<T> where T : class
     {
