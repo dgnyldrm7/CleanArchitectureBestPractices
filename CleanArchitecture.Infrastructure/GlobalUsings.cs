@@ -7,3 +7,5 @@ global using CleanArchitecture.Application.Interfaces.Common;
 global using CleanArchitecture.Application.JwtOptions;
 global using CleanArchitecture.Infrastructure.Settings;
 global using Microsoft.Extensions.Options;
+global using CleanArchitecture.Domain.Interfaces.Common;
+global using Microsoft.Extensions.Caching.Memory;

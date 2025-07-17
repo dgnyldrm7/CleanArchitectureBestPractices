@@ -1,13 +1,4 @@
-﻿using CleanArchitecture.Application.Common;
-using CleanArchitecture.Persistance.Context;
-using CleanArchitecture.Persistance.Identity;
-using CleanArchitecture.Persistance.Repositories.GenericRepository;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-
-namespace CleanArchitecture.Persistance
+﻿namespace CleanArchitecture.Persistance
 {
     public static class DependencyInjection
     {

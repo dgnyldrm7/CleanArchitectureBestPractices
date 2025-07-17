@@ -1,7 +1,4 @@
-﻿using CleanArchitecture.Application.Interfaces.Common;
-using Microsoft.Extensions.Caching.Memory;
-
-namespace CleanArchitecture.Infrastructure.Caching
+﻿namespace CleanArchitecture.Infrastructure.Caching
 {
     public class CacheService : ICachService
     {

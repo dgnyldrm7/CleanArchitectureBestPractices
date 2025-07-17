@@ -1,7 +1,4 @@
-﻿global using Microsoft.AspNetCore.Diagnostics;
-global using System.Net;
-global using System.Text.Json;
-global using CleanArchitecture.Application;
+﻿global using CleanArchitecture.Application;
 global using CleanArchitecture.Application.Interfaces;
 global using CleanArchitecture.Domain;
 global using CleanArchitecture.Infrastructure;
@@ -9,6 +6,6 @@ global using CleanArchitecture.Infrastructure.SignalR;
 global using CleanArchitecture.Persistance;
 global using CleanArchitecture.Presentation.Hubs;
 global using CleanArchitecture.Shared;
-global using Microsoft.AspNetCore.SignalR;
 global using CleanArchitecture.WebApi;
+global using Microsoft.AspNetCore.SignalR;
 global using CleanArchitecture.API.Middlewares;

@@ -1,11 +1,4 @@
-﻿using CleanArchitecture.Application.Interfaces.Common;
-using CleanArchitecture.Domain.Base;
-using CleanArchitecture.Domain.Entities.Products;
-using CleanArchitecture.Persistance.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
-
-namespace CleanArchitecture.Persistance.Context;
+﻿namespace CleanArchitecture.Persistance.Context;
 
 public sealed class AppDbContext : IdentityDbContext<ApplicationUser>
 {

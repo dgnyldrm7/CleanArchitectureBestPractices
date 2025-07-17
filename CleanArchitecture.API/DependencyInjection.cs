@@ -1,14 +1,11 @@
-﻿using CleanArchitecture.WebApi.ExceptionHandlers;
-
-namespace CleanArchitecture.WebApi
+﻿namespace CleanArchitecture.WebApi
 {
     public static class DependencyInjection
     {
         public static void AddWebApiServices(this IServiceCollection services, IConfiguration configuration)
-        {
-            services.AddExceptionHandler<GlobalExceptionHandler>();
-
-            services.AddProblemDetails();
+        {     
+            //KULALIMINI ARAŞTIR!
+            //services.AddProblemDetails();
 
             // If you singlethon or transient services, you can register them here
             // Example:
@@ -26,11 +23,14 @@ namespace CleanArchitecture.WebApi
 
             // Register the HttpContextAccessor to access the current HTTP context
             services.AddHttpContextAccessor();
-
-            // Register the custom middleware for handling exceptions globally
-            services.AddExceptionHandler<GlobalExceptionHandler>();
-            services.AddExceptionHandler<BannedColorExceptionHandler>();
+                                
             
+            // Register the custom middleware for handling exceptions globally - Burada özel çalışma yapmalıyız! Daha dikkatli çalışmalısın!
+            //services.AddExceptionHandler<GlobalExceptionHandler>();
+            
+            //services.AddExceptionHandler<BannedColorExceptionHandler>();
+
+            //services.AddExceptionHandler<GlobalExceptionHandler>();
         }
     }
 }

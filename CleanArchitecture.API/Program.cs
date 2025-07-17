@@ -1,3 +1,5 @@
+
+
 namespace CleanArchitecture.API;
 
 public class Program
@@ -5,6 +7,7 @@ public class Program
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+
 
         builder.Services.AddControllers()
             .AddApplicationPart(typeof(CleanArchitecture.Presentation.AssemblyReference).Assembly);
@@ -29,9 +32,15 @@ public class Program
         {
             app.UseSwagger();
             app.UseSwaggerUI();
+            app.UseExceptionHandler("/Error");
+            builder.Services.AddDatabaseDeveloperPageExceptionFilter(); // This is used to show detailed error pages in development mode MÜKEMMEL BÝR ÖZELLÝK!!!
+            //app.UseHsts(); // HSTS is not recommended in development environments
         }
 
-        app.UseExceptionHandler();
+        // UseStatusCodePages yapýsý, HTTP durum kodlarýný yönetmek için kullanýlýr. Örneðin, 404 Not Found durumunda özel bir sayfa göstermek için kullanýlabilir. Özelleþtirme de yapýlabilir!
+        app.UseStatusCodePages();
+
+        app.UseMiddleware<GlobalExceptionMiddleware>();
 
         app.MapHub<ChatHub>("/chathub");
 

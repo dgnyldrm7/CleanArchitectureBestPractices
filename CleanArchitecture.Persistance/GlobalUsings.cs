@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CleanArchitecture.Persistance
-{
-    internal class GlobalUsings
-    {
-    }
-}
+﻿global using CleanArchitecture.Domain.Base;
+global using CleanArchitecture.Domain.Entities.Products;
+global using CleanArchitecture.Domain.Interfaces.Common;
+global using CleanArchitecture.Persistance.Identity;
+global using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore;
+global using CleanArchitecture.Domain.Common;
+global using CleanArchitecture.Persistance.Context;
+global using CleanArchitecture.Persistance.Repositories.GenericRepository;
+global using Microsoft.AspNetCore.Identity;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.Extensions.DependencyInjection;

@@ -1,8 +1,4 @@
-﻿using CleanArchitecture.Application.Common;
-using CleanArchitecture.Persistance.Context;
-using Microsoft.EntityFrameworkCore;
-
-namespace CleanArchitecture.Persistance.Repositories.GenericRepository
+﻿namespace CleanArchitecture.Persistance.Repositories.GenericRepository
 {
     public class Generic<T> : IGeneric<T> where T : class
     {
