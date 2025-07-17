@@ -1,8 +1,4 @@
-﻿using CleanArchitecture.Application.Interfaces.Common;
-using Microsoft.AspNetCore.Http;
-using System.Security.Claims;
-
-namespace CleanArchitecture.Presentation.Services
+﻿namespace CleanArchitecture.Presentation.Services
 {
     public class CurrentUserService : ICurrentUserService
     {

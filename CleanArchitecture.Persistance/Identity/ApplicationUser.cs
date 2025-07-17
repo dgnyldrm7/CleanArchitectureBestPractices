@@ -1,5 +1,4 @@
 ﻿using CleanArchitecture.Domain.Entities.Users;
-using Microsoft.AspNetCore.Identity;
 
 namespace CleanArchitecture.Persistance.Identity
 {

@@ -1,11 +1,10 @@
-﻿global using System;
-global using System.Collections.Generic;
-global using System.Linq;
-global using System.Text;
-global using System.Threading.Tasks;
+﻿global using CleanArchitecture.Application.Interfaces;
 global using CleanArchitecture.Application.Interfaces.Common;
 global using CleanArchitecture.Application.JwtOptions;
-global using CleanArchitecture.Infrastructure.Settings;
-global using Microsoft.Extensions.Options;
 global using CleanArchitecture.Domain.Interfaces.Common;
+global using CleanArchitecture.Infrastructure.Settings;
+global using Microsoft.AspNetCore.SignalR;
 global using Microsoft.Extensions.Caching.Memory;
+global using Microsoft.Extensions.Options;
+global using System;
+global using System.Threading.Tasks;

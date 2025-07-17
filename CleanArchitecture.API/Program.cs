@@ -1,5 +1,3 @@
-
-
 namespace CleanArchitecture.API;
 
 public class Program

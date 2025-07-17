@@ -9,3 +9,5 @@ global using CleanArchitecture.Shared;
 global using CleanArchitecture.WebApi;
 global using Microsoft.AspNetCore.SignalR;
 global using CleanArchitecture.API.Middlewares;
+global using CleanArchitecture.Application.Exceptions;
+global using Microsoft.AspNetCore.Diagnostics;

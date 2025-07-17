@@ -1,7 +1,4 @@
-﻿using CleanArchitecture.Application.Interfaces;
-using Microsoft.AspNetCore.SignalR;
-
-namespace CleanArchitecture.Infrastructure.SignalR
+﻿namespace CleanArchitecture.Infrastructure.SignalR
 {
     public class SignalRService<THub> : ISignalRTypeSafe where THub : Hub
     {

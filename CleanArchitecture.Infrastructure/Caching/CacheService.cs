@@ -1,22 +1,33 @@
 ﻿namespace CleanArchitecture.Infrastructure.Caching
 {
-    public class CacheService : ICachService
+    public class CacheService : ICacheService
     {
-        private readonly IMemoryCache memoryCache;
+        private readonly IMemoryCache? memoryCache;
+
+        public CacheService(IMemoryCache memoryCache)
+        {
+            this.memoryCache = memoryCache;
+        }
 
         public bool Exists(Guid key)
         {
-            return memoryCache.TryGetValue(key, out var value);
+            return memoryCache!.TryGetValue(key, out var value);
         }
 
-        public T Get<T>(Guid key)
+        public T? Get<T>(Guid key)
         {
-            return memoryCache.TryGetValue(key, out var value) ? (T)value : default;
+            if (memoryCache != null && memoryCache.TryGetValue(key, out var value))
+            {
+                return (T?)value;
+            }
+
+            return default;
         }
+
 
         public void Remove(Guid key)
         {
-            memoryCache.Remove(key);
+            memoryCache!.Remove(key);
         }
 
         public void Set<T>(Guid key, T value, TimeSpan expiration)
@@ -26,7 +37,7 @@
                 AbsoluteExpirationRelativeToNow = expiration
             };
 
-            memoryCache.Set(key, value, cacheOptions);
+            memoryCache!.Set(key, value, cacheOptions);
         }
     }
 }

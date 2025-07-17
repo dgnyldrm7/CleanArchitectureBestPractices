@@ -1,4 +1,6 @@
-﻿namespace CleanArchitecture.WebApi
+﻿using CleanArchitecture.WebApi.ExceptionHandlers;
+
+namespace CleanArchitecture.WebApi
 {
     public static class DependencyInjection
     {
@@ -11,13 +13,15 @@
             // Example:
             // builder.Services.AddSingleton<ISingletonService, SingletonService>();
             services.AddScoped<ISignalRTypeSafe>(provider =>
-             {
+            {
                 var hubContext = provider.GetRequiredService<IHubContext<ChatHub>>();
                 return new SignalRService<ChatHub>(hubContext);
-             });
+            });
 
+            //SignalR entegrasyonu
             services.AddSignalR();
 
+            //Swagger işlemleri için eklendi!
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
 
@@ -30,7 +34,7 @@
             
             //services.AddExceptionHandler<BannedColorExceptionHandler>();
 
-            //services.AddExceptionHandler<GlobalExceptionHandler>();
+            services.AddExceptionHandler<BannedColorExceptionHandler>();
         }
     }
 }

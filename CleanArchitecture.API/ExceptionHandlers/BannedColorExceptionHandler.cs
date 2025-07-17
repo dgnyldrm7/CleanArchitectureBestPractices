@@ -1,17 +1,24 @@
-﻿using CleanArchitecture.Application.Exceptions;
-using System;
-
-namespace CleanArchitecture.WebApi.ExceptionHandlers
+﻿namespace CleanArchitecture.WebApi.ExceptionHandlers
 {
-    public class BannedColorExceptionHandler : IExceptionHandler<BannedColorException>
+    public class BannedColorExceptionHandler : IExceptionHandler
     {
-        public async ValueTask<bool> TryHandleAsync(HttpContext context, BannedColorException exception, CancellationToken cancellationToken)
+        private readonly BannedColorException bannedColorException;
+        public BannedColorExceptionHandler(BannedColorException bannedColorException)
         {
-            context.Response.StatusCode = StatusCodes.Status409Conflict;
-            await context.Response.WriteAsJsonAsync(new
+            this.bannedColorException = bannedColorException;
+        }
+
+        //process burada yer alacaktır!
+        public async ValueTask<bool> TryHandleAsync(HttpContext httpContext, Exception exception, CancellationToken cancellationToken)
+        {
+            httpContext.Response.StatusCode = 500;
+
+            await httpContext.Response.WriteAsJsonAsync(new
             {
-                StatusCode = 409,
-                Error = exception.Message
+                Title = "ServerError",
+                StatusCode = 500,
+                Message = exception.Message,
+                BannedColor = bannedColorException.Color,
             }, cancellationToken);
 
             return true;
