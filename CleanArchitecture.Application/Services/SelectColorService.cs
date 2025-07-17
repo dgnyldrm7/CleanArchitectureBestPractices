@@ -1,6 +1,4 @@
-﻿
-
-namespace CleanArchitecture.Application.Services
+﻿namespace CleanArchitecture.Application.Services
 {
     public class SelectColorService
     {

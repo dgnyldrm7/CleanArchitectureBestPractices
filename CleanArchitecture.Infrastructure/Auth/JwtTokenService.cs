@@ -1,11 +1,5 @@
-﻿using CleanArchitecture.Application.Interfaces.Jwt;
-using CleanArchitecture.Application.JwtOptions;
-using CleanArchitecture.Infrastructure.Settings;
-using Microsoft.Extensions.Options;
-
-namespace CleanArchitecture.Infrastructure.Auth
+﻿namespace CleanArchitecture.Infrastructure.Auth
 {
-    //implementasyon
     public class JwtTokenService : ITokenService
     {
         private readonly JwtSettings jwtSettings;
@@ -15,7 +9,7 @@ namespace CleanArchitecture.Infrastructure.Auth
             this.jwtSettings = options.Value;
         }
 
-        public GenerateAccessTokenResponse GenerateAccessToken(string userId, string userName, IList<string> roles)
+        public string GenerateAccessToken(string userEmail)
         {
             throw new NotImplementedException();
         }
@@ -25,7 +19,7 @@ namespace CleanArchitecture.Infrastructure.Auth
             throw new NotImplementedException();
         }
 
-        public TokenMessageResponse GenerateToken(string userName, IList<string> roles)
+        public TokenMessageResponse GenerateToken(string userId, string role, DateTime expiration)
         {
             throw new NotImplementedException();
         }

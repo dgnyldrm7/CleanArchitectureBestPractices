@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CleanArchitecture.Infrastructure
-{
-    internal class GlobalUsings
-    {
-    }
-}
+﻿global using System;
+global using System.Collections.Generic;
+global using System.Linq;
+global using System.Text;
+global using System.Threading.Tasks;
+global using CleanArchitecture.Application.Interfaces.Common;
+global using CleanArchitecture.Application.JwtOptions;
+global using CleanArchitecture.Infrastructure.Settings;
+global using Microsoft.Extensions.Options;
