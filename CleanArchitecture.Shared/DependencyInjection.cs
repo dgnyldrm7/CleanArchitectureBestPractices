@@ -1,7 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using System.Reflection;
-
-namespace CleanArchitecture.Shared
+﻿namespace CleanArchitecture.Shared
 {
     public static class DependencyInjection
     {
@@ -9,17 +6,19 @@ namespace CleanArchitecture.Shared
         {
             var types = assembly.GetTypes();
 
-            var implementations = types
-                .Where(t => t.IsClass && !t.IsAbstract && !t.IsGenericType)
-                .ToList();
-
-            foreach (var impl in implementations)
+            foreach (var type in types)
             {
-                var interfaces = impl.GetInterfaces();
+                if (!type.IsClass || type.IsAbstract || type.IsGenericType || typeof(Exception).IsAssignableFrom(type))
+                    continue;
+
+                if (typeof(IHostedService).IsAssignableFrom(type))
+                    continue;
+
+                var interfaces = type.GetInterfaces();
 
                 foreach (var iface in interfaces)
                 {
-                    services.AddScoped(iface, impl);
+                    services.AddScoped(iface, type);
                 }
             }
 

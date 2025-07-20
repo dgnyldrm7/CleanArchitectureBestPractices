@@ -13,13 +13,15 @@
                 return new SignalRService<ChatHub>(hubContext);
             });
 
+            services.AddMemoryCache();
+
             services.AddSignalR();
 
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
             services.AddHttpContextAccessor();
                                 
-            services.AddExceptionHandler<BannedColorExceptionHandler>();
+            services.AddExceptionHandler<GlobalExceptionHandler>();
             services.AddProblemDetails();
         }
     }

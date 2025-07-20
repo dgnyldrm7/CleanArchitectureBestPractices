@@ -24,6 +24,8 @@ public class Program
         builder.Services.AddAllScopedServices(typeof(CleanArchitecture.Domain.AssemblyReference).Assembly);
         builder.Services.AddAllScopedServices(typeof(CleanArchitecture.Presentation.AssemblyReference).Assembly);
 
+        builder.Services.AddDatabaseDeveloperPageExceptionFilter(); // This is used to show detailed error pages in development mode MÜKEMMEL BÝR ÖZELLÝK!!!
+
         var app = builder.Build();
 
         if (app.Environment.IsDevelopment())
@@ -31,14 +33,12 @@ public class Program
             app.UseSwagger();
             app.UseSwaggerUI();
             app.UseExceptionHandler("/Error");
-            builder.Services.AddDatabaseDeveloperPageExceptionFilter(); // This is used to show detailed error pages in development mode MÜKEMMEL BÝR ÖZELLÝK!!!
+
             //app.UseHsts(); // HSTS is not recommended in development environments
         }
 
         // UseStatusCodePages yapýsý, HTTP durum kodlarýný yönetmek için kullanýlýr. Örneðin, 404 Not Found durumunda özel bir sayfa göstermek için kullanýlabilir. Özelleþtirme de yapýlabilir!
         app.UseStatusCodePages();
-
-        app.UseMiddleware<GlobalExceptionMiddleware>();
 
         app.MapHub<ChatHub>("/chathub");
 
@@ -47,6 +47,8 @@ public class Program
         app.UseAuthentication();
 
         app.UseAuthorization();
+
+        app.UseMiddleware<GlobalExceptionMiddleware>();
 
         app.MapControllers();
 

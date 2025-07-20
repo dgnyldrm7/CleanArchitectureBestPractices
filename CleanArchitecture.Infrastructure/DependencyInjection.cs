@@ -1,9 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using CleanArchitecture.Infrastructure.Settings;
-using CleanArchitecture.Infrastructure.SignalR;
-
-namespace CleanArchitecture.Infrastructure
+﻿namespace CleanArchitecture.Infrastructure
 {
     public static class DependencyInjection
     {
@@ -12,6 +7,9 @@ namespace CleanArchitecture.Infrastructure
             services.Configure<EmailSettings>(configuration.GetSection("EmailSettings"));
 
             services.Configure<DatabaseSettings>(configuration.GetSection("DatabaseSettings"));
+
+            services.AddHostedService<MyBackgroundService>();
+
 
             return services;
         }

@@ -11,17 +11,10 @@
 
         public async Task InvokeAsync(HttpContext context)
         {
-            // Middleware'in işlevselliği burada gerçekleştirilir
-            // Örneğin, gelen istek üzerinde bazı işlemler yapabiliriz
 
-            // Sonraki middleware'e geçmeden önce bir işlem yap
-            await context.Response.WriteAsync("Security Middleware öncesi işlem\n");
+            //process the request and catch any exceptions
 
-            // Sonraki middleware bileşenine geç
             await _next(context);
-
-            // Sonraki middleware'den sonra bir işlem yap
-            await context.Response.WriteAsync("Security Middleware sonrası işlem\n");
         }
     }
 }
