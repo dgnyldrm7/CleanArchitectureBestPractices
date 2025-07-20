@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-namespace CleanArchitecture.Presentation.Controller
+﻿namespace CleanArchitecture.Presentation.Controller
 {
     [ApiController]
     [Route("api/[controller]")]
@@ -9,7 +7,7 @@ namespace CleanArchitecture.Presentation.Controller
         [HttpGet]
         public IActionResult GetValues()
         {
-            var values = new[] { "Value1", "Value2", "Value3" };
+            var values = new[] { ColorNames.FIRST_COLOR_NAME, "Value2", "Value3" };
             return Ok(values);
         }
     }
